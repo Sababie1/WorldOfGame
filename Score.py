@@ -6,8 +6,10 @@ def add_score(difficulty):
     # The function will read the current score in the scores file,
     # if it fails it will create a new one and will save the current score.
     try:
-        score = open(Path("Scores.txt"), "a")
-        score.write(f"{POINTS_OF_WINNING}, ")
+        with open(Path("Scores.txt"), "a") as score:
+            score.write(f"{POINTS_OF_WINNING}, ")
+            score.close()
     except FileNotFoundError:
-        score = open(Path("Scores.txt"), "x")
-        score.write(POINTS_OF_WINNING)
+        with open(Path("Scores.txt"), "x") as score:
+            score.write(POINTS_OF_WINNING)
+            score.close()
