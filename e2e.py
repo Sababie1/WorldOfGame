@@ -6,7 +6,6 @@ import MainScores
 
 app = Flask(__name__)
 
-app = Flask(__name__)
 
 
 # Creating a route that has both GET and POST request methods
